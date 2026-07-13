@@ -3,7 +3,6 @@
 ## Project Overview
 
 **Project Title**: Retail Sales Analysis  
-**Level**: Beginner  
 **Database**: `p1_retail_db`
 
 This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. This project is ideal for those who are starting their journey in data analysis and want to build a solid foundation in SQL.
@@ -25,7 +24,7 @@ This project is designed to demonstrate SQL skills and techniques typically used
 ```sql
 CREATE DATABASE p1_retail_db;
 
-CREATE TABLE retail_sales
+CREATE TABLE retailsales
 (
     transactions_id INT PRIMARY KEY,
     sale_date DATE,	
@@ -49,17 +48,17 @@ CREATE TABLE retail_sales
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
-SELECT COUNT(*) FROM retail_sales;
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
-SELECT DISTINCT category FROM retail_sales;
+SELECT COUNT(*) FROM retailsales;
+SELECT COUNT(DISTINCT customer_id) FROM retailsales;
+SELECT DISTINCT category FROM retailsales;
 
-SELECT * FROM retail_sales
+SELECT * FROM retailsales
 WHERE 
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
     gender IS NULL OR age IS NULL OR category IS NULL OR 
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 
-DELETE FROM retail_sales
+DELETE FROM retailsales
 WHERE 
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
     gender IS NULL OR age IS NULL OR category IS NULL OR 
@@ -73,7 +72,7 @@ The following SQL queries were developed to answer specific business questions:
 1. **Write a SQL query to retrieve all columns for sales made on '2022-11-05**:
 ```sql
 SELECT *
-FROM retail_sales
+FROM retailsales
 WHERE sale_date = '2022-11-05';
 ```
 
