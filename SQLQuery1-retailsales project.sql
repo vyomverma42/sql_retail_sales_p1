@@ -103,8 +103,7 @@ from retailsales
 where sale_date = '2022-11-05';
 
 --Q2. write a sql query to retrieve all transactions where the category is 'clothing' and qty sold is more than 10 in Nov 2022.
-s
-elect 
+select 
   category,
   sum(quantiy)
   from retailsales
